@@ -1,0 +1,38 @@
+{
+  "name":"api-boiler",
+  "version":"0.0.1",
+  "dependencies":{
+    "coffee-script":"*",
+
+    "crudify": "*",
+    "passport": "*",
+    "passport-twitter": "*",
+    "connect": "*",
+    "connect-mongo": "*",
+    "express":"*",
+    "mongoose": "*",
+    "goosestrap": "*",
+
+    "config-chain": "*",
+    "winston": "*",
+    "optimist": "*",
+    "async": "*",
+    "require-dir": "*",
+    "request": "*",
+    "try-parse":"*"
+  },
+  "devDependencies": {
+    "mocha":"*",
+    "should":"*",
+    "grunt-contrib-copy":"*",
+    "grunt-contrib-watch":"*",
+    "grunt-contrib-coffee":"*"
+  },
+  "scripts":{
+    "test": "NODE_ENV=testing mocha --reporter spec",
+    "start":"coffee start.coffee"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}

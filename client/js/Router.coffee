@@ -1,4 +1,4 @@
-define ['models/Item', 'views/Main', 'views/Note'], (Item, Main, Note) ->
+define ['views/Main', 'views/Note', 'views/Item'], (Main, Note, Item) ->
 
 	AppRouter = Backbone.Router.extend
 		routes:
@@ -10,8 +10,8 @@ define ['models/Item', 'views/Main', 'views/Note'], (Item, Main, Note) ->
 
 
 	appRouter.on 'route:getItem', (id) ->
-		console.log "The item number is #{id}"
-		View = new Note(el: $("#content"))
+		console.log "Item route called -  number is #{id}"
+		View = new Item(el: $("#content"))
 
 	appRouter.on 'route:main', () ->
 		console.log "The Main page"
@@ -35,4 +35,4 @@ define ['models/Item', 'views/Main', 'views/Note'], (Item, Main, Note) ->
 
 
 
-	Backbone.history.start({pushState:true})
+	Backbone.history.start({pushState:false})

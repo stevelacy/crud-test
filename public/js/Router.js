@@ -1,5 +1,5 @@
 (function() {
-  define(['models/Item', 'views/Main', 'views/Note'], function(Item, Main, Note) {
+  define(['views/Main', 'views/Note', 'views/Item'], function(Main, Note, Item) {
     var AppRouter, appRouter;
     AppRouter = Backbone.Router.extend({
       routes: {
@@ -11,8 +11,8 @@
     appRouter = new AppRouter;
     appRouter.on('route:getItem', function(id) {
       var View;
-      console.log("The item number is " + id);
-      return View = new Note({
+      console.log("Item route called -  number is " + id);
+      return View = new Item({
         el: $("#content")
       });
     });
@@ -32,7 +32,7 @@
       });
     });
     return Backbone.history.start({
-      pushState: true
+      pushState: false
     });
   });
 

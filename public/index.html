@@ -6,7 +6,7 @@
 	<script src="http://underscorejs.org/underscore-min.js"></script>
 	<script src="http://backbonejs.org/backbone-min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="js/require.js" data-main="js/main.js" data-text="js/text.js"></script>
+	<script src="js/require.js" data-main="js/main.js"></script>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 	<title>Test</title>
 </head>
@@ -15,19 +15,31 @@
 
 <main class="bs-masthead" id="content" role="main"></main>
 
-<script type="text/template" id="template-content">
+
+
+<script type="text/template" id="template-main">
 	<a href="http://node.la/auth/twitter">Login with twitter</a>
 	<input type="text" id="test">
 	<input type="button" value="click">
-	<a href="/items/1">This is the link<a>
-	<a href="/note/1">Note link<a>
+	<a href="#/items/1">This is the link<a>
+	<a href="#/note/1">Note link<a>
 </script>
 <script type="text/template" id="template-banner">
-<h1>Banner</h1>
+	<a href="/">
+	<h1>Banner</h1>
+	</a>
+	<a href="#/items/1">This is the link<a>
+	<a href="#/note/1">Note link<a>
+	<a href="http://node.la/v1/items">API</a>
+	<hr>
 </script>
-<script type="text/template" id="template-user">
-<h1>Note</h1>
-<h2>Note content</h2>
+<script type="text/template" id="template-note">
+	<h1>Note</h1>
+	<h2>Note content</h2>
+</script>
+<script type="text/template" id="template-item">
+	<h1>Item</h1>
+	<h2>Note content</h2>
 </script>
 
 

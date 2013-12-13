@@ -6,7 +6,8 @@ define ['text!/templates/note.html'],(template) ->
 			console.log template
 
 		render: ->
-			template = _.template($(template).html(), {data:data} )
+			#template = _.template($(template).html(), {data:data} )
+			template = _.template($("#template-note").html(), {data:data} )
 			@$el.html template
 		events:
 			"click input[type=button]": "runTest"

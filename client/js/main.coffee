@@ -1,4 +1,5 @@
-define ['models/Item', 'views/Main', 'views/Banner', 'Router'], (Item, Main, Banner, Router) ->
+define ['Router', 'models/Item', 'views/Main', 'views/Banner'], (Router, Item, Main, Banner) ->
+	###
 	test = new Item 
 		title: "test from backbone "
 		kind: "note"
@@ -14,8 +15,9 @@ define ['models/Item', 'views/Main', 'views/Banner', 'Router'], (Item, Main, Ban
 			console.log err
 
 	#contentView = new Main(el: $("#content"))
+	###
 	bannerView = new Banner(el: $("#banner"))
-
+	
 
 
 		

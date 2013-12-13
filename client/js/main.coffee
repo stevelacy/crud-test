@@ -13,7 +13,7 @@ define ['models/Item', 'views/Main', 'views/Banner', 'Router'], (Item, Main, Ban
 		error: (err) ->
 			console.log err
 
-	contentView = new Main(el: $("#content"))
+	#contentView = new Main(el: $("#content"))
 	bannerView = new Banner(el: $("#banner"))
 
 

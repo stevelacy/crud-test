@@ -1,10 +1,10 @@
-define ->
+define ['text!/templates/main.html'],(template)->
 	class View extends Backbone.View
 		initialize: ->
 			@render()
 
 		render: ->
-			template = _.template($("#template-content").html(), {} )
+			template = _.template($(template).html(), {} )
 			@$el.html template
 
 		events:

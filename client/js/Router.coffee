@@ -1,33 +1,25 @@
-AppRouter = Backbone.Router.extend
-	routes:
-		"items/:id":"getItem"
+define ['models/Item', 'views/Main', 'views/Note'], (Item, Main, Note) ->
 
-appRouter = new AppRouter
-appRouter.on 'route:getItem', (id) ->
-	console.log "The item number is #{id}"
+	AppRouter = Backbone.Router.extend
+		routes:
+			"":"main"
+			"items/:id":"getItem"
+			"note/:id":"note"
+
+	appRouter = new AppRouter
 
 
+	appRouter.on 'route:getItem', (id) ->
+		console.log "The item number is #{id}"
+		View = new Note(el: $("#content"))
 
+	appRouter.on 'route:main', () ->
+		console.log "The Main page"
+		View = new Main(el: $("#content"))
 
-
-$(document).on "click", "a[href^='/']", (event) ->
-
-	href = $(event.currentTarget).attr('href')
-
-	# chain 'or's for other black list routes
-	passThrough = href.indexOf('sign_out') >= 0
-
-	# Allow shift+click for new tabs, etc.
-	if !passThrough && !event.altKey && !event.ctrlKey && !event.metaKey && !event.shiftKey
-	  event.preventDefault()
-
-	  # Remove leading slashes and hash bangs (backward compatablility)
-	  url = href.replace(/^\//,'').replace('\#\!\/','')
-
-	  # Instruct Backbone to trigger routing events
-	  appRouter.navigate url, { trigger: true }
-
-	  return false
+	appRouter.on 'route:note', (id) ->
+		console.log "Note clicked"
+		View = new Note(el: $("#content"), data:id)
 
 
 
@@ -37,4 +29,10 @@ $(document).on "click", "a[href^='/']", (event) ->
 
 
 
-Backbone.history.start({pushState:true})
+
+
+
+
+
+
+	Backbone.history.start({pushState:true})

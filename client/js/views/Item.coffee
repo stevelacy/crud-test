@@ -1,18 +1,17 @@
-define  ->
-	data = "test"
+define ["../models/Item", "../Router"],(Item, Router) ->
+
+
 	class View extends Backbone.View
 		initialize: ->
+			@.model = new Item({id:"#{@.id}"})
 			@render()
 			
-
 		render: ->
-			template = _.template($("#template-item").html(), {data:data} )
-			@$el.html template
-		events:
-			"click input[type=button]": "runTest"
+			that = @
+			@.model.fetch
+				success: (data) ->
+					template = _.template($("#template-item").html(), {item:data} )
+					that.$el.html template
+					console.log data.toJSON()
 
-		runTest: (e) ->
-			console.log $("#test").val()
-
-	
 

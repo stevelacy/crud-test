@@ -2,8 +2,9 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(function() {
-    var View, _ref;
+  define(['../collections/Items'], function(Items) {
+    var View, items, _ref;
+    items = new Items();
     return View = (function(_super) {
       __extends(View, _super);
 
@@ -17,9 +18,18 @@
       };
 
       View.prototype.render = function() {
-        var template;
-        template = _.template($("#template-main").html(), {});
-        return this.$el.html(template);
+        var that;
+        that = this;
+        return items.fetch({
+          success: function() {
+            var template;
+            console.log(items.models);
+            template = _.template($("#template-main").html(), {
+              items: items.models
+            });
+            return that.$el.html(template);
+          }
+        });
       };
 
       View.prototype.events = {

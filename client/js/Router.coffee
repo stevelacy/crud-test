@@ -4,6 +4,7 @@ define ['views/Main', 'views/Note', 'views/Item'], (Main, Note, Item) ->
 		routes:
 			"":"main"
 			"items/:id":"getItem"
+			"item/:id":"item"
 			"note/:id":"note"
 
 	appRouter = new AppRouter
@@ -12,6 +13,9 @@ define ['views/Main', 'views/Note', 'views/Item'], (Main, Note, Item) ->
 	appRouter.on 'route:getItem', (id) ->
 		console.log "Item route called -  number is #{id}"
 		View = new Item(el: $("#content"))
+	appRouter.on 'route:item', (id) ->
+		console.log "Item route called -  number is #{id}"
+		View = new Item(el: $("#content"), id:id)
 
 	appRouter.on 'route:main', () ->
 		console.log "The Main page"

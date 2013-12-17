@@ -5,6 +5,7 @@
       routes: {
         "": "main",
         "items/:id": "getItem",
+        "item/:id": "item",
         "note/:id": "note"
       }
     });
@@ -14,6 +15,14 @@
       console.log("Item route called -  number is " + id);
       return View = new Item({
         el: $("#content")
+      });
+    });
+    appRouter.on('route:item', function(id) {
+      var View;
+      console.log("Item route called -  number is " + id);
+      return View = new Item({
+        el: $("#content"),
+        id: id
       });
     });
     appRouter.on('route:main', function() {

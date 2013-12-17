@@ -39,17 +39,25 @@
       };
 
       View.prototype.saveData = function(e) {
-        var userData;
+        var itemData;
         e.preventDefault();
-        userData = {
-          title: this.$el.find("input[name='title']").val(),
-          content: this.$el.find("input[name='content']").val()
-        };
-        return this.model.save(userData, {
+        itemData = this.getFormData(this.$el.find("form"));
+        console.log(itemData);
+        return this.model.save(itemData, {
           success: function(data) {
             return console.log(data);
           }
         });
+      };
+
+      View.prototype.getFormData = function(form) {
+        var indexed_array, unindexed_array;
+        unindexed_array = form.serializeArray();
+        indexed_array = {};
+        $.map(unindexed_array, function(n, i) {
+          return indexed_array[n["name"]] = n["value"];
+        });
+        return indexed_array;
       };
 
       return View;

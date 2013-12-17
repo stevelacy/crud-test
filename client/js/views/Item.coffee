@@ -18,15 +18,19 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 
 		saveData: (e) ->
 			e.preventDefault()
-			#console.log @.model.save()
-			userData = 
-				title: @.$el.find("input[name='title']").val()
-				content: @.$el.find("input[name='content']").val()
+			itemData = @getFormData(@$el.find("form"))
+			console.log itemData
 
-			@.model.save userData, 
+			@.model.save itemData, 
 				success: (data) ->
 					console.log data
 			
 			
 
+		getFormData: (form) ->
+			unindexed_array = form.serializeArray()
+			indexed_array = {}
+			$.map unindexed_array, (n, i) ->
+				indexed_array[n["name"]] = n["value"]
 
+			indexed_array

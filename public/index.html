@@ -55,11 +55,11 @@
 	<h2>Note content</h2>
 </script>
 <script type="text/template" id="template-item">
-<form class="item-edit-form input-group  col-md-8 center">
-	<input type="text" id="title" name="title" class="form-control" value="<%= htmlEncode(item.get('title'))%>" placeholder="<%= htmlEncode(item.get('title'))%>"/>
-	<textarea id="content" name="content" class="form-control" rows="10"><%= htmlEncode(item.get('content'))%></textarea>
-	<input type="hidden" name="id" value="<%= item.id %>" />
-	<button type="submit" class="btn btn-primary" type="submit">Save</button>
+	<form class="item-edit-form input-group  col-md-8 center">
+		<input type="text" id="title" name="title" class="form-control" value="<%= htmlEncode(item.get('title'))%>" placeholder="<%= htmlEncode(item.get('title'))%>"/>
+		<textarea id="content" name="content" class="form-control" rows="10"><%= htmlEncode(item.get('content'))%></textarea>
+		<input type="hidden" name="id" value="<%= item.id %>" />
+		<button type="submit" class="btn btn-primary" type="submit">Save</button>
 	</form>
 </script>
 

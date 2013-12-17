@@ -19,15 +19,13 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 		saveData: (e) ->
 			e.preventDefault()
 			#console.log @.model.save()
-			
-			title: @.$el.find("input[name='title']").val()
-			content: @.$el.find("input[name='content']").val()
-			console.log @.$el.find("input[name='title']").val()
+			userData = 
+				title: @.$el.find("input[name='title']").val()
+				content: @.$el.find("input[name='content']").val()
 
-			@.model.set 'title', title 
-			@.model.set 'content', content
-
-			@.model.save 
+			@.model.save userData, 
+				success: (data) ->
+					console.log data
 			
 			
 

@@ -39,15 +39,17 @@
       };
 
       View.prototype.saveData = function(e) {
+        var userData;
         e.preventDefault();
-        ({
+        userData = {
           title: this.$el.find("input[name='title']").val(),
           content: this.$el.find("input[name='content']").val()
+        };
+        return this.model.save(userData, {
+          success: function(data) {
+            return console.log(data);
+          }
         });
-        console.log(this.$el.find("input[name='title']").val());
-        this.model.set('title', title);
-        this.model.set('content', content);
-        return this.model.save;
       };
 
       return View;

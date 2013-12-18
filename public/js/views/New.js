@@ -13,26 +13,15 @@
       }
 
       View.prototype.initialize = function() {
+        this.model = new Item();
         return this.render();
       };
 
       View.prototype.render = function() {
-        var that;
+        var template, that;
         that = this;
-        console.log(this.id);
-        this.model = new Item({
-          id: this.id
-        });
-        return this.model.fetch({
-          success: function(data) {
-            var template;
-            template = _.template($("#template-item").html(), {
-              item: data
-            });
-            that.$el.html(template);
-            return console.log(data.toJSON());
-          }
-        });
+        template = _.template($("#template-new").html(), {});
+        return that.$el.html(template);
       };
 
       View.prototype.events = {
@@ -46,7 +35,6 @@
         itemData = this.getFormData(this.$el.find("form"));
         console.log(itemData);
         return this.model.save(itemData, {
-          patch: true,
           success: function(data) {
             return console.log(data);
           }

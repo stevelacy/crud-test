@@ -3,18 +3,13 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 
 	class View extends Backbone.View
 		initialize: ->
-			
+			@.model = new Item()
 			@render()
 			
 		render: ->
 			that = @
-			console.log @.id
-			@.model = new Item({id: @.id})
-			@.model.fetch
-				success: (data) ->
-					template = _.template($("#template-item").html(), {item:data} )
-					that.$el.html template
-					console.log data.toJSON()
+			template = _.template($("#template-new").html(), {})
+			that.$el.html template
 		events:
 			"submit form": "saveData"
 			"click #delete": "destroyModel"
@@ -25,7 +20,6 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 			console.log itemData
 
 			@.model.save itemData, 
-				patch: true
 				success: (data) ->
 					console.log data
 		destroyModel: (e) ->

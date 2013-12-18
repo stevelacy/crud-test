@@ -1,12 +1,13 @@
 (function() {
-  define(['views/Main', 'views/Note', 'views/Item'], function(Main, Note, Item) {
+  define(['views/Main', 'views/Note', 'views/Item', 'views/New'], function(Main, Note, Item, New) {
     var AppRouter, appRouter;
     AppRouter = Backbone.Router.extend({
       routes: {
         "": "main",
         "items/:id": "getItem",
         "item/:id": "item",
-        "note/:id": "note"
+        "note/:id": "note",
+        "new": "new"
       }
     });
     appRouter = new AppRouter;
@@ -38,6 +39,13 @@
       return View = new Note({
         el: $("#content"),
         data: id
+      });
+    });
+    appRouter.on('route:new', function() {
+      var View;
+      console.log("new item");
+      return View = new New({
+        el: $("#content")
       });
     });
     return Backbone.history.start({

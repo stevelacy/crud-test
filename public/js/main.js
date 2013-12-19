@@ -18,9 +18,6 @@
     	#contentView = new Main(el: $("#content"))
     */
 
-    var bannerView;
-    bannerView = new Banner();
-    return $("#banner").html(bannerView.render().el);
   });
 
 }).call(this);

@@ -21,7 +21,7 @@
         });
         return this.model.fetch({
           success: function(data) {
-            this.$el.html(templ({
+            this.$el.html(templ()({
               id: this.id
             }));
             return console.log(data.toJSON());

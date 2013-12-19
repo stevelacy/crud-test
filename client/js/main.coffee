@@ -16,8 +16,7 @@ define ['app/Router', 'models/Item', 'views/Main', 'views/Banner'], (Router, Ite
 
 	#contentView = new Main(el: $("#content"))
 	###
-	bannerView = new Banner()
-	$("#banner").html bannerView.render().el
+
 	
 
 

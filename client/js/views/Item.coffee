@@ -11,7 +11,7 @@ define ["../models/Item", "templates/item"],(Item, templ) ->
 				success: (data) ->
 					#template = _.template($("#template-item").html(), {item:data} )
 					#that.$el.html template
-					@$el.html templ id: @id
+					@$el.html templ() id: @id
 					console.log data.toJSON()
 		events:
 			"submit form": "saveData"

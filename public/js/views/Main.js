@@ -19,7 +19,9 @@
         return items.fetch({
           success: function() {
             console.log(items.models);
-            return this.$el.html(templ);
+            return this.$el.html(templ()({
+              items: items.models
+            }));
           }
         });
       };

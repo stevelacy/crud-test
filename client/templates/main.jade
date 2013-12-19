@@ -1,18 +1,19 @@
 a(href="#/new")
-  button.btn.btn-info New
+  button.btn.btn-primary.margin-5 New
 hr
 .col-md-10.center.bg-white
-  table.table.table-condensed.table-striped
+  table.table.width-full.align-center(cellspacing="0")
     thead
       tr
         th.col-sm-2 Title
         th.col-sm-2 delete
     tbody
       each item in items
-        tr
-          td
-            a.btn(href="#/item/#{item.id}")
-              | #{item.title}
+        a(href="#/item/#{item.id}")
+          tr.hover.trans
+            td
+              a(href="#/item/#{item.id}")
+                | #{item.title}
 
-          td
-           a.btn.btn-danger(href="#/del/#{item.id}") X
+            td
+             a.btn.btn-danger(href="#/del/#{item.id}") X

@@ -1,21 +1,84 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
 // color swatches:
-white-pure = #fff
-white = #fafafa
-white-shade = #efefef
-grey-light = #dfdfdf
-grey-med = #bebebe
-grey = #555
-grey-dark = #262626
-black = #000
+white-pure = rgba(255, 255, 255, 1)
+white = rgba(250, 250, 250, 1)
+white-shade = rgba(239, 239, 239, 1)
+grey-light = rgba(223, 223, 223, 1)
+grey-light-shade = rgba(222, 222, 222, 1)
+grey-shade = rgba(190, 190, 190, 1)
+grey = rgba(85, 85, 85, 1)
+grey-dark = rgba(38, 38, 38, 1)
+grey-dark-shade = rgba(28, 28, 28, 1)
+black = rgba(0, 0, 0, 1)
+blue = rgba(52, 152, 219, 1)
+blue-shade = rgba(41, 128, 185, 1)
+red = rgba(231, 76, 60, 1)
+red-shade = rgba(192, 57, 43, 1)
+green = rgba(101, 157, 50, 1)
+green-shade = rgba(81, 137, 30, 1)
+yellow = rgba(241, 196, 15, 1)
+yellow-shade = rgba(243, 156, 18, 1)
+
+font = 'Roboto', sans-serif;
+
+
+
+
+
+
+// Start
+*
+  margin 0
+  padding 0
+
+*, *:before, *:after
+  -moz-box-sizing border-box
+  -webkit-box-sizing border-box
+  box-sizing border-box
 
 // default items
+body
+  width 100%
+  font-family font
+  font-size 1em
+  font-weight 300
+  color grey-shade
+
 input, textarea
+  font-family font
+  font-weight 300
+  padding 5px
   outline none
   border none !important
   box-shadow none !important
-  border 1px solid white-shade !important
+  border 1px solid white-pure !important
+  &:focus
+    border 1px solid white-shade
 
+ 
+img
+  border none
+  outline none
+h1, h2, h3, h4, h5, h6
+  font-weight normal
+
+a
+  outline none
+  text-decoration none
+  color grey-dark
+  &:hover
+    text-decoration underline
+    color grey-dark-shade
+
+ 
 // elements
+.wrapper
+  position: relative
+  width 100%
+.banner
+  width 100%
+  height 75px
+
 .main
   background white-shade
 .item-box
@@ -23,26 +86,151 @@ input, textarea
   padding 15px
   background white
 
+
+.table
+  border none
+  border-spacing none
+  padding none
+  margin none
+  th
+    padding 10px
+    border-bottom 1px solid grey-light-shade
+  td
+    padding 15px
+    border-bottom 1px solid grey-light-shade
+  .hover:hover
+    background white-shade
+
+
+
+// button classes
+.btn
+  padding 5px 10px
+  min-width 30px
+  min-height 30px
+  border none
+  box-shadow 0 0 1px grey-shade
+  background-image: -o-linear-gradient(bottom, grey-light-shade 0%, grey-shade 100%);
+  background-image: -moz-linear-gradient(bottom, grey-light-shade 0%, grey-shade 100%);
+  background-image: -webkit-linear-gradient(bottom, grey-light-shade 0%, grey-shade 100%);
+  background-image: -ms-linear-gradient(bottom, grey-light-shade 0%, grey-shade 100%);
+  background-image: linear-gradient(to bottom, grey-light-shade 0%, grey-shade 100%);
+
+.btn-lg
+  padding 15px
+  font-size 1.2em
+  
+.btn-primary
+  background-image: -o-linear-gradient(bottom, blue 0%, blue-shade 100%);
+  background-image: -moz-linear-gradient(bottom, blue 0%, blue-shade 100%);
+  background-image: -webkit-linear-gradient(bottom, blue 0%, blue-shade 100%);
+  background-image: -ms-linear-gradient(bottom, blue 0%, blue-shade 100%);
+  background-image: linear-gradient(to bottom, blue 0%, blue-shade 100%);
+  color white
+.btn-success
+  background-image: -o-linear-gradient(bottom, green 0%, green-shade 100%);
+  background-image: -moz-linear-gradient(bottom, green 0%, green-shade 100%);
+  background-image: -webkit-linear-gradient(bottom, green 0%, green-shade 100%);
+  background-image: -ms-linear-gradient(bottom, green 0%, green-shade 100%);
+  background-image: linear-gradient(to bottom, green 0%, green-shade 100%);
+  color white  
+.btn-danger
+  background-image: -o-linear-gradient(bottom, red 0%, red-shade 100%);
+  background-image: -moz-linear-gradient(bottom, red 0%, red-shade 100%);
+  background-image: -webkit-linear-gradient(bottom, red 0%, red-shade 100%);
+  background-image: -ms-linear-gradient(bottom, red 0%, red-shade 100%);
+  background-image: linear-gradient(to bottom, red 0%, red-shade 100%);
+  color white 
+.btn-info
+  background-image: -o-linear-gradient(bottom, yellow 0%, yellow-shade 100%);
+  background-image: -moz-linear-gradient(bottom, yellow 0%, yellow-shade 100%);
+  background-image: -webkit-linear-gradient(bottom, yellow 0%, yellow-shade 100%);
+  background-image: -ms-linear-gradient(bottom, yellow 0%, yellow-shade 100%);
+  background-image: linear-gradient(to bottom, yellow 0%, yellow-shade 100%);
+  color white 
+
+
 // style classes
+.trans
+  -webkit-transition all 0.4s ease
+  -moz-transition all 0.4s ease
+  -o-transition all 0.4s ease
+  transition all 0.4s ease  
 .center
   float none
   margin-left auto
   margin-right auto
+
+.align-right
+  text-align right
+.align-left
+  text-align left
+.align-center
+  text-align center
+
 .spacer-100
   height 100px
 .spacer-50
   height 50px
 .spacer-25
   height 25px
+.bold
+  font-weight bold
 .box-shadow-light
-  box-shadow 0 2px 2px grey-med
+  box-shadow 0 2px 2px grey-shade
 
 .margin-5
   margin 5px    
+.large 
+  padding 2%
+  font-size 1.5em  
 
+.width-full
+  width 100%
 
 // color classes
+//color classes
+.black
+  color black
+.white
+  color white
+.white-pure
+  color white-pure
+.white-shade
+  color white-shade
 
+.grey-light
+  color grey-light
+.grey-light-shade
+  color grey-light-shade
+.grey
+  color grey
+.grey-shade
+  color grey-shade
+.grey-dark
+  color grey-dark
+.grey-dark-shade
+  color grey-dark-shade
+
+.blue
+  color blue
+.blue-shade
+  color blue-shade
+
+.red
+  color red
+.red-shade
+  color red-shade
+
+.green
+  color green
+.green-shade
+  color green-shade
+
+.yellow
+  color yellow
+.yellow-shade
+  color yellow-shade
 .bg-black
   background black
 
@@ -56,7 +244,29 @@ input, textarea
   background grey-light
 .bg-grey
   background grey
-.bg-grey-med
-  background grey-med
-.bg-dark-grey
+.bg-grey-shade
+  background grey-shade
+.bg-grey
   background grey-dark
+.bg-blue
+  background blue
+.bg-blue-shade
+  background blue-shade
+.bg-red
+  background red
+.bg-red-shade
+  background red-shade
+.bg-green
+  background green
+.bg-green-shade
+  background green-shade
+.bg-yellow
+  background yellow
+.bg-yellow-shade
+  background yellow-shade
+
+
+
+@media all and (max-width: 680px)
+  .item-box
+    width 90%  

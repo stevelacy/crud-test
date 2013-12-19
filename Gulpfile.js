@@ -12,7 +12,7 @@ gulp.task('templates', function(){
 	gulp.src("./client/templates/**/*.jade")
 	.pipe(jade({client:true}))
 	.pipe(wrap({
-		deps: ['jade'],
+		deps: ['vendor/jade'],
 		params: ['jade']
     }))
 	.pipe(gulp.dest("./public/templates"))

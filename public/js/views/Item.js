@@ -22,7 +22,7 @@
         return this.model.fetch({
           success: function(data) {
             this.$el.html(templ({
-              id: id
+              id: this.id
             }));
             return console.log(data.toJSON());
           }

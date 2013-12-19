@@ -11,7 +11,7 @@ define ["../models/Item", "../Router", "../../templates/item"],(Item, Router, te
 				success: (data) ->
 					#template = _.template($("#template-item").html(), {item:data} )
 					#that.$el.html template
-					@$el.html templ id: id
+					@$el.html templ id: @id
 					console.log data.toJSON()
 		events:
 			"submit form": "saveData"

@@ -1,4 +1,4 @@
-define(["jade"],function(jade){
+define(["vendor/jade"],function(jade){
 
 return function anonymous(locals) {
 jade.debug = [{ lineno: 1, filename: "./client/templates/item.jade" }];

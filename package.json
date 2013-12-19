@@ -19,7 +19,13 @@
     "async": "*",
     "require-dir": "*",
     "request": "*",
-    "try-parse":"*"
+    "try-parse":"*",
+    "gulp":"*",
+    "gulp-jade":"*",
+    "gulp-wrap-amd":"*",
+    "gulp-livereload":"*",
+    "tiny-lr":"*",
+    "gulp-coffee":"*"
   },
   "devDependencies": {
     "mocha":"*",

@@ -1,7 +1,7 @@
 define(["vendor/jade"],function(jade){
 
 return function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "./client/templates/item.jade" }];
+jade.debug = [{ lineno: 1, filename: "/www/node/claru-backbone/client/templates/item.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),title = locals_.title,content = locals_.content,id = locals_.id;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });

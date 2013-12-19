@@ -1,26 +1,32 @@
-var gulp = require('gulp');
-var lr = require('tiny-lr');
-var jade = require('gulp-jade');
-var wrap = require('gulp-wrap-amd');
-var coffee = require('gulp-coffee');
-var reload = require('gulp-livereload');
+var gulp = require("gulp");
+var lr = require("tiny-lr");
+var jade = require("gulp-jade");
+var wrap = require("gulp-wrap-amd");
+var coffee = require("gulp-coffee");
+var reload = require("gulp-livereload");
 require("coffee-script");
 
 server = lr();
 
-gulp.task('templates', function(){
+gulp.task("templates", function(){
 	gulp.src("./client/templates/**/*.jade")
 	.pipe(jade({client:true}))
 	.pipe(wrap({
-		deps: ['vendor/jade'],
-		params: ['jade']
+		deps: ["vendor/jade"],
+		params: ["jade"]
     }))
 	.pipe(gulp.dest("./public/templates"))
 	.pipe(reload(server));
 
 });
+gulp.task("jade", function(){
+	gulp.src("./client/*.jade")
+	.pipe(jade())
+	.pipe(gulp.dest("./public"))
+	.pipe(reload(server));
+});
 
-gulp.task('scripts', function(){
+gulp.task("scripts", function(){
 	gulp.src("./client/js/**/*.coffee")
 		.pipe(coffee())
 		.pipe(gulp.dest("./public/js"))
@@ -30,7 +36,7 @@ gulp.task('scripts', function(){
 
 });
 
-gulp.task('copy', function(){
+gulp.task("copy", function(){
 	gulp.src("./client/css/**/*.css")
 		.pipe(gulp.dest("./public/css"))
 		.pipe(reload(server));
@@ -43,28 +49,31 @@ gulp.task('copy', function(){
 	
 });
 
-gulp.task('watch', function(){
+gulp.task("watch", function(){
 	server.listen(35729, function (err) {
     if (err) return console.log(err);
 
-		gulp.watch('./client/js/**', function(e){
-			gulp.run('scripts');
+		gulp.watch("./client/js/**", function(e){
+			gulp.run("scripts");
 		});
-		gulp.watch('./client/templates/**', function(e){
-			gulp.run('templates');
+		gulp.watch("./client/templates/**", function(e){
+			gulp.run("templates");
 		});
-		gulp.watch('./client/*.html', function(e){
-			gulp.run('copy');
+		gulp.watch("./client/*.html", function(e){
+			gulp.run("copy");
 		});
-		gulp.watch('./client/css/**', function(e){
-			gulp.run('copy');
+		gulp.watch("./client/*.jade", function(e){
+			gulp.run("jade");
+		});
+		gulp.watch("./client/css/**", function(e){
+			gulp.run("copy");
 		});
 	
 	});
 });
 
-gulp.task('default', function(){
-	gulp.run('templates', 'scripts', 'copy', 'watch');
+gulp.task("default", function(){
+	gulp.run("templates", "scripts", "copy", "watch", "jade");
 	require("./start");
 	
 });

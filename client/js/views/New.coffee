@@ -1,12 +1,12 @@
-define ["../models/Item", "../Router"],(Item, Router) ->
+define ["models/Item","app/Router", "templates/new"],(Item, Router, templ) ->
 
 
 	class View extends Backbone.View
 				
 		render: ->
-			that = @
-			template = _.template($("#template-new").html(), {})
-			that.$el.html template
+			@model = new Item
+			@$el.html templ
+			return @
 		events:
 			"submit form": "saveData"
 			"click #delete": "destroyModel"
@@ -16,12 +16,12 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 			itemData = @getFormData(@$el.find("form"))
 			console.log itemData
 
-			@.model.save itemData, 
+			@model.save itemData, 
 				success: (data) ->
 					console.log data
 		destroyModel: (e) ->
 			e.preventDefault()
-			@.model.destroy
+			@model.destroy
 				success: () ->
 					console.log "model destroyed"
 			
@@ -30,7 +30,7 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 		getFormData: (form) ->
 			unindexed_array = form.serializeArray()
 			indexed_array = {}
-			$.map unindexed_array, (n, i) ->
+			unindexed_array.forEach (n) ->
 				indexed_array[n["name"]] = n["value"]
 
-			indexed_array
+			return indexed_array

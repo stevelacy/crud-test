@@ -1,5 +1,5 @@
 (function() {
-  define(['views/Main', 'views/Item', 'views/Banner'], function(Main, Item, Banner) {
+  define(['views/Main', 'views/Item', 'views/Banner', 'views/New'], function(Main, Item, Banner, New) {
     var AppRouter, appRouter, bannerView;
     AppRouter = Backbone.Router.extend({
       routes: {
@@ -42,9 +42,8 @@
     appRouter.on('route:new', function() {
       var view;
       console.log("new item");
-      return view = new New({
-        el: $("#content")
-      });
+      view = new New;
+      return $("#content").html(view.render().el);
     });
     bannerView = new Banner;
     $("#banner").html(bannerView.render().el);

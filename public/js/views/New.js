@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["../models/Item", "../Router"], function(Item, Router) {
+  define(["models/Item", "app/Router", "templates/new"], function(Item, Router, templ) {
     var View, _ref;
     return View = (function(_super) {
       __extends(View, _super);
@@ -13,10 +13,9 @@
       }
 
       View.prototype.render = function() {
-        var template, that;
-        that = this;
-        template = _.template($("#template-new").html(), {});
-        return that.$el.html(template);
+        this.model = new Item;
+        this.$el.html(templ);
+        return this;
       };
 
       View.prototype.events = {
@@ -49,7 +48,7 @@
         var indexed_array, unindexed_array;
         unindexed_array = form.serializeArray();
         indexed_array = {};
-        $.map(unindexed_array, function(n, i) {
+        unindexed_array.forEach(function(n) {
           return indexed_array[n["name"]] = n["value"];
         });
         return indexed_array;

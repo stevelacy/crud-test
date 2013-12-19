@@ -1,5 +1,5 @@
 a(href="#/new")
-  button.btn.btn-info
+  button.btn.btn-info New
 hr
 table.table.striped
   thead
@@ -11,7 +11,7 @@ table.table.striped
       tr
         td
           a.btn(href="#/item/#{item.id}")
-            #{item.title}
+            | #{item.title}
 
         td
-         a.btn(btn-danger href="#/del/#{item.id}")
+         a.btn.btn-danger(href="#/del/#{item.id}") X

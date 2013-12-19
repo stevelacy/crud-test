@@ -16,14 +16,15 @@
       View.prototype.render = function() {
         var that;
         that = this;
-        return items.fetch({
+        items.fetch({
           success: function() {
             console.log(items.models);
-            return this.$el.html(templ()({
-              items: items.models
+            return that.$el.html(templ({
+              items: items.toJSON()
             }));
           }
         });
+        return this;
       };
 
       View.prototype.events = {

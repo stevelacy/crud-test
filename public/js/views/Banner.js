@@ -13,9 +13,10 @@
       }
 
       View.prototype.render = function() {
-        return this.$el.html(templ({
+        this.$el.html(templ({
           test: "test"
         }));
+        return this;
       };
 
       View.prototype.events = {

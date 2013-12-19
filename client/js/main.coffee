@@ -1,4 +1,4 @@
-define ['app/Router', 'models/Item', 'views/Main', 'views/Banner'], (Router, Item, Main, Banner) ->
+define ['app/Router'], (Router) ->
 	###
 	test = new Item 
 		title: "test from backbone "

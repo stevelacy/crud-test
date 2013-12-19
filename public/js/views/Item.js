@@ -19,14 +19,15 @@
         this.model = new Item({
           id: this.id
         });
-        return this.model.fetch({
+        this.model.fetch({
           success: function(data) {
-            this.$el.html(templ()({
-              id: this.id
+            that.$el.html(templ({
+              item: data.toJSON()
             }));
             return console.log(data.toJSON());
           }
         });
+        return this;
       };
 
       View.prototype.events = {

@@ -16,7 +16,7 @@ define ['views/Main','views/Item', 'views/Banner'], (Main, Item, Banner) ->
 		console.log "Item route called -  number is #{id}"
 		view = new Item(el: $("#content"))
 	###	
-	###
+
 	appRouter.on 'route:item', (id) ->
 		console.log "Item route called -  number is #{id}"
 		view = new Item id:id
@@ -26,8 +26,7 @@ define ['views/Main','views/Item', 'views/Banner'], (Main, Item, Banner) ->
 		console.log "The Main page"
 		view = new Main
 		$("#content").html view.render().el
-	###
-	###
+
 	appRouter.on 'route:note', (id) ->
 		console.log "Note clicked"
 		view = new Note(el: $("#content"), data:id)
@@ -35,7 +34,7 @@ define ['views/Main','views/Item', 'views/Banner'], (Main, Item, Banner) ->
 	appRouter.on 'route:new', () ->
 		console.log "new item"
 		view = new New(el: $("#content"))
-	###
+
 
 
 	bannerView = new Banner

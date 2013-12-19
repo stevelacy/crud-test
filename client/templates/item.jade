@@ -1,0 +1,7 @@
+form.item-edit-form.input-group.col-md-8.center
+	input.form-control(type="text" name="title" value="#{title}")
+	textarea.form-control(name="content" rows="10")
+		#{content}
+	input(type="hidden" name="id" value="#{id}")
+	button.btn.btn-primary(type="submit")
+	button.btn.btn-danger.delete(type="button")

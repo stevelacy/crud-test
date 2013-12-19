@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["../models/Item", "../Router"], function(Item, Router) {
+  define(["../models/Item", "../Router", "../../templates/item"], function(Item, Router, templ) {
     var View, _ref;
     return View = (function(_super) {
       __extends(View, _super);
@@ -11,10 +11,6 @@
         _ref = View.__super__.constructor.apply(this, arguments);
         return _ref;
       }
-
-      View.prototype.initialize = function() {
-        return this.render();
-      };
 
       View.prototype.render = function() {
         var that;
@@ -25,11 +21,9 @@
         });
         return this.model.fetch({
           success: function(data) {
-            var template;
-            template = _.template($("#template-item").html(), {
-              item: data
-            });
-            that.$el.html(template);
+            this.$el.html(templ({
+              id: id
+            }));
             return console.log(data.toJSON());
           }
         });
@@ -37,7 +31,7 @@
 
       View.prototype.events = {
         "submit form": "saveData",
-        "click #delete": "destroyModel"
+        "click .delete": "destroyModel"
       };
 
       View.prototype.saveData = function(e) {
@@ -66,7 +60,7 @@
         var indexed_array, unindexed_array;
         unindexed_array = form.serializeArray();
         indexed_array = {};
-        $.map(unindexed_array, function(n, i) {
+        unindexed_array.forEach(function(n) {
           return indexed_array[n["name"]] = n["value"];
         });
         return indexed_array;

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var lr = require('tiny-lr');
 var jade = require('gulp-jade');
+var wrap = require('gulp-wrap-amd');
 var coffee = require('gulp-coffee');
 var reload = require('gulp-livereload');
 require("coffee-script");
@@ -9,7 +10,11 @@ server = lr();
 
 gulp.task('templates', function(){
 	gulp.src("./client/templates/**/*.jade")
-	.pipe(jade())
+	.pipe(jade({client:true}))
+	.pipe(wrap({
+		deps: ['jade'],
+		params: ['jade']
+    }))
 	.pipe(gulp.dest("./public/templates"))
 	.pipe(reload(server));
 

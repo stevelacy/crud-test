@@ -7,7 +7,7 @@
 	<script src="http://underscorejs.org/underscore-min.js"></script>
 	<script src="http://backbonejs.org/backbone-min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-	<script src="js/require.js" data-main="js/main.js"></script>
+	<script src="js/vendor/require.js" data-main="js/main.js"></script>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 	<title>Test</title>
 </head>
@@ -61,7 +61,7 @@
 		<textarea id="content" name="content" class="form-control" rows="10"><%= htmlEncode(item.get('content'))%></textarea>
 		<input type="hidden" name="id" value="<%= item.id %>" />
 		<button type="submit" class="btn btn-primary">Save</button>
-		<button type="button" class="btn btn-danger" id="delete">Delete</button>
+		<button type="button" class="btn btn-danger .delete">Delete</button>
 	</form>
 </script>
 <script type="text/template" id="template-new">

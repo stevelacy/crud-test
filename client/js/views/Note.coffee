@@ -1,4 +1,4 @@
-define ['text!/templates/note.html'],(template) ->
+define  ->
 	data = ""
 	class View extends Backbone.View
 		initialize: ->

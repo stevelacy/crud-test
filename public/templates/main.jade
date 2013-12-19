@@ -1,0 +1,59 @@
+define(["jade"],function(jade){
+
+return function anonymous(locals) {
+jade.debug = [{ lineno: 1, filename: "./client/templates/main.jade" }];
+try {
+var buf = [];
+jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
+buf.push("<script id=\"template-note\" type=\"text/template\">");
+jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 2, filename: jade.debug[0].filename });
+buf.push("<a href=\"http://node.la/auth/twitter\">");
+jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 2, filename: jade.debug[0].filename });
+buf.push("Login with twitter");
+jade.debug.shift();
+jade.debug.shift();
+buf.push("</a>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 3, filename: jade.debug[0].filename });
+buf.push("<input id=\"test\" type=\"text\"/>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 4, filename: jade.debug[0].filename });
+buf.push("<input type=\"button\" value=\"click\"/>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
+buf.push("<br/>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
+buf.push("<a href=\"#/items/1\">");
+jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
+buf.push("This is the link ");
+jade.debug.shift();
+jade.debug.shift();
+buf.push("</a>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+buf.push("<br/>");
+jade.debug.shift();
+jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+buf.push("<a href=\"#/note/1\">");
+jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+buf.push("Note link ");
+jade.debug.shift();
+jade.debug.shift();
+buf.push("</a>");
+jade.debug.shift();
+jade.debug.shift();
+buf.push("</script>");
+jade.debug.shift();
+jade.debug.shift();;return buf.join("");
+} catch (err) {
+  jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno);
+}
+};
+
+});

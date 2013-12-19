@@ -11,20 +11,19 @@
       }
     });
     appRouter = new AppRouter;
-    appRouter.on('route:getItem', function(id) {
-      var View;
-      console.log("Item route called -  number is " + id);
-      return View = new Item({
-        el: $("#content")
-      });
-    });
+    /*
+    	appRouter.on 'route:getItem', (id) ->
+    		console.log "Item route called -  number is #{id}"
+    		View = new Item(el: $("#content"))
+    */
+
     appRouter.on('route:item', function(id) {
       var View;
       console.log("Item route called -  number is " + id);
-      return View = new Item({
-        el: $("#content"),
+      View = new Item({
         id: id
       });
+      return $("#content").html(View.render().el);
     });
     appRouter.on('route:main', function() {
       var View;

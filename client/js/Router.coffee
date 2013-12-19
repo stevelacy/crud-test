@@ -10,13 +10,15 @@ define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Ite
 
 	appRouter = new AppRouter
 
-
+	###
 	appRouter.on 'route:getItem', (id) ->
 		console.log "Item route called -  number is #{id}"
 		View = new Item(el: $("#content"))
+	###	
 	appRouter.on 'route:item', (id) ->
 		console.log "Item route called -  number is #{id}"
-		View = new Item(el: $("#content"), id:id)
+		View = new Item id:id
+		$("#content").html View.render().el
 
 	appRouter.on 'route:main', () ->
 		console.log "The Main page"

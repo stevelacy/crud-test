@@ -2,10 +2,7 @@ define ["../models/Item", "../Router"],(Item, Router) ->
 
 
 	class View extends Backbone.View
-		initialize: ->
-			@.model = new Item()
-			@render()
-			
+				
 		render: ->
 			that = @
 			template = _.template($("#template-new").html(), {})

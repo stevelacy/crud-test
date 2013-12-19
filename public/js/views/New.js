@@ -12,11 +12,6 @@
         return _ref;
       }
 
-      View.prototype.initialize = function() {
-        this.model = new Item();
-        return this.render();
-      };
-
       View.prototype.render = function() {
         var template, that;
         that = this;

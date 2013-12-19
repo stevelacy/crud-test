@@ -19,9 +19,8 @@
     */
 
     var bannerView;
-    return bannerView = new Banner({
-      el: $("#banner")
-    });
+    bannerView = new Banner();
+    return $("#banner").html(bannerView.render().el);
   });
 
 }).call(this);

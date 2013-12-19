@@ -1,11 +1,10 @@
-define ->
+define ['../../templates/banner'],(templ)->
 	class View extends Backbone.View
-		initialize: ->
-			@render()
 
 		render: ->
-			template = _.template($("#template-banner").html(), {} )
-			@$el.html template
+			#template = _.template($("#template-banner").html(), {} )
+			#@$el.html template
+			@$el.html templ
 
 		events:
 			"click input[type=button]": "runTest"

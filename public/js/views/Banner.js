@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(function() {
+  define(['../../templates/banner'], function(templ) {
     var View, _ref;
     return View = (function(_super) {
       __extends(View, _super);
@@ -12,14 +12,8 @@
         return _ref;
       }
 
-      View.prototype.initialize = function() {
-        return this.render();
-      };
-
       View.prototype.render = function() {
-        var template;
-        template = _.template($("#template-banner").html(), {});
-        return this.$el.html(template);
+        return this.$el.html(templ);
       };
 
       View.prototype.events = {

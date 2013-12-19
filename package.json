@@ -1,42 +1,40 @@
 {
-  "name":"api-boiler",
-  "version":"0.0.3",
-  "dependencies":{
-    "coffee-script":"*",
-
+  "name": "api-boiler",
+  "version": "0.0.3",
+  "dependencies": {
+    "coffee-script": "*",
     "crudify": "*",
     "passport": "*",
     "passport-twitter": "*",
     "connect": "*",
     "connect-mongo": "*",
-    "express":"*",
+    "express": "*",
     "mongoose": "*",
     "goosestrap": "*",
-
     "config-chain": "*",
     "winston": "*",
     "optimist": "*",
     "async": "*",
     "require-dir": "*",
     "request": "*",
-    "try-parse":"*",
-    "gulp":"*",
-    "gulp-jade":"*",
-    "gulp-wrap-amd":"*",
-    "gulp-livereload":"*",
-    "tiny-lr":"*",
-    "gulp-coffee":"*"
+    "try-parse": "*",
+    "gulp": "*",
+    "gulp-jade": "*",
+    "gulp-wrap-amd": "*",
+    "gulp-livereload": "~0.1.0",
+    "tiny-lr": "0.0.5",
+    "gulp-coffee": "*"
   },
   "devDependencies": {
-    "mocha":"*",
-    "should":"*",
-    "grunt-contrib-copy":"*",
-    "grunt-contrib-watch":"*",
-    "grunt-contrib-coffee":"*"
+    "mocha": "*",
+    "should": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-coffee": "*"
   },
-  "scripts":{
+  "scripts": {
     "test": "NODE_ENV=testing mocha --reporter spec",
-    "start":"coffee start.coffee"
+    "start": "coffee start.coffee"
   },
   "engines": {
     "node": ">=0.6"

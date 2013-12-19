@@ -1,4 +1,4 @@
-define ['../collections/Items', '../../templates/main'],(Items, templ) ->
+define ['collections/Items', 'templates/main'],(Items, templ) ->
 	items = new Items()
 
 	class View extends Backbone.View
@@ -10,7 +10,7 @@ define ['../collections/Items', '../../templates/main'],(Items, templ) ->
 					console.log items.models
 					#template = _.template($("#template-main").html(), {items: items.models})
 					#that.$el.html template
-					@$el.html templ, id: @id
+					@$el.html templ
 
 		events:
 			"click input[type=button]": "runTest"

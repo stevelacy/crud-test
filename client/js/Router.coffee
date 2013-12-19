@@ -1,4 +1,5 @@
-define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
+#define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
+define ['views/Main','views/Item'], (Main, Item) ->
 
 	AppRouter = Backbone.Router.extend
 		routes:
@@ -22,8 +23,9 @@ define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Ite
 
 	appRouter.on 'route:main', () ->
 		console.log "The Main page"
-		view = new Main(el: $("#content"))
-
+		view = new Main
+		$("#content").html view.render().el
+	###
 	appRouter.on 'route:note', (id) ->
 		console.log "Note clicked"
 		view = new Note(el: $("#content"), data:id)
@@ -31,7 +33,7 @@ define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Ite
 	appRouter.on 'route:new', () ->
 		console.log "new item"
 		view = new New(el: $("#content"))
-
+	###
 
 
 

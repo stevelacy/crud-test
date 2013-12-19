@@ -1,7 +1,7 @@
 define(["vendor/jade"],function(jade){
 
 return function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "./client/templates/main.js" }];
+jade.debug = [{ lineno: 1, filename: "./client/templates/main.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),items = locals_.items;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });

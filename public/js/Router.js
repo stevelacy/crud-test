@@ -14,36 +14,36 @@
     /*
     	appRouter.on 'route:getItem', (id) ->
     		console.log "Item route called -  number is #{id}"
-    		View = new Item(el: $("#content"))
+    		view = new Item(el: $("#content"))
     */
 
     appRouter.on('route:item', function(id) {
-      var View;
+      var view;
       console.log("Item route called -  number is " + id);
-      View = new Item({
+      view = new Item({
         id: id
       });
-      return $("#content").html(View.render().el);
+      return $("#content").html(view.render().el);
     });
     appRouter.on('route:main', function() {
-      var View;
+      var view;
       console.log("The Main page");
-      return View = new Main({
+      return view = new Main({
         el: $("#content")
       });
     });
     appRouter.on('route:note', function(id) {
-      var View;
+      var view;
       console.log("Note clicked");
-      return View = new Note({
+      return view = new Note({
         el: $("#content"),
         data: id
       });
     });
     appRouter.on('route:new', function() {
-      var View;
+      var view;
       console.log("new item");
-      return View = new New({
+      return view = new New({
         el: $("#content")
       });
     });

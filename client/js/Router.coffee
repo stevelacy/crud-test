@@ -13,24 +13,24 @@ define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Ite
 	###
 	appRouter.on 'route:getItem', (id) ->
 		console.log "Item route called -  number is #{id}"
-		View = new Item(el: $("#content"))
+		view = new Item(el: $("#content"))
 	###	
 	appRouter.on 'route:item', (id) ->
 		console.log "Item route called -  number is #{id}"
-		View = new Item id:id
-		$("#content").html View.render().el
+		view = new Item id:id
+		$("#content").html view.render().el
 
 	appRouter.on 'route:main', () ->
 		console.log "The Main page"
-		View = new Main(el: $("#content"))
+		view = new Main(el: $("#content"))
 
 	appRouter.on 'route:note', (id) ->
 		console.log "Note clicked"
-		View = new Note(el: $("#content"), data:id)
+		view = new Note(el: $("#content"), data:id)
 
 	appRouter.on 'route:new', () ->
 		console.log "new item"
-		View = new New(el: $("#content"))
+		view = new New(el: $("#content"))
 
 
 

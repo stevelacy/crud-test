@@ -1,4 +1,4 @@
-define ["../models/Item", "../Router", "../../templates/item"],(Item, Router, templ) ->
+define ["../models/Item", "templates/item"],(Item, templ) ->
 
 
 	class View extends Backbone.View

@@ -68,21 +68,28 @@ a:hover {
   padding: 15px;
   background: #fafafa;
 }
-.table {
+.item-list {
   border: none;
   border-spacing: none;
   padding: none;
   margin: none;
 }
-.table th {
+.item-list th {
   padding: 10px;
   border-bottom: 1px solid #dedede;
 }
-.table td {
-  padding: 15px;
+.item-list li {
+  position: relative;
+  list-style: none;
+  padding: 15px 15px 15px 25%;
   border-bottom: 1px solid #dedede;
 }
-.table .hover:hover {
+.item-list li .delete {
+  position: absolute;
+  right: 5%;
+  top: 10px;
+}
+.item-list .hover:hover {
   background: #efefef;
 }
 .btn {
@@ -177,6 +184,10 @@ a:hover {
 }
 .width-full {
   width: 100%;
+}
+.width-full-res {
+  margin: auto;
+  width: 60%;
 }
 .black {
   color: #000;
@@ -283,5 +294,8 @@ a:hover {
 @media all and (max-width: 680px) {
   .item-box {
     width: 90%;
+  }
+  .width-full-res {
+    width: 100%;
   }
 }

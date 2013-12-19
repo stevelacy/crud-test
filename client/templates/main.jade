@@ -1,19 +1,12 @@
 a(href="#/new")
   button.btn.btn-primary.margin-5 New
 hr
-.col-md-10.center.bg-white
-  table.table.width-full.align-center(cellspacing="0")
-    thead
-      tr
-        th.col-sm-2 Title
-        th.col-sm-2 delete
-    tbody
-      each item in items
-        a(href="#/item/#{item.id}")
-          tr.hover.trans
-            td
-              a(href="#/item/#{item.id}")
-                | #{item.title}
-
-            td
-             a.btn.btn-danger(href="#/del/#{item.id}") X
+.center
+  .item-list.width-full-res
+    - each item in items
+      a(href="#/item/#{item.id}")
+        li.hover.trans.bg-white
+          | #{item.title}
+          .delete.btn.btn-danger(data-id="#{item.id}") X
+      //.spacer-25
+.spacer-100

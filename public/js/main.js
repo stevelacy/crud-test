@@ -1,5 +1,5 @@
 (function() {
-  define(['/js/Router.js', 'models/Item', 'views/Main', 'views/Banner'], function(Router, Item, Main, Banner) {
+  define(['app/Router', 'models/Item', 'views/Main', 'views/Banner'], function(Router, Item, Main, Banner) {
     /*
     	test = new Item 
     		title: "test from backbone "

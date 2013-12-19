@@ -1,17 +1,18 @@
 a(href="#/new")
   button.btn.btn-info New
 hr
-table.table.striped
-  thead
-    tr
-      th Title
-      th delete
-  tbody
-    each item in items
+.col-md-10.center.bg-white
+  table.table.table-condensed.table-striped
+    thead
       tr
-        td
-          a.btn(href="#/item/#{item.id}")
-            | #{item.title}
+        th.col-sm-2 Title
+        th.col-sm-2 delete
+    tbody
+      each item in items
+        tr
+          td
+            a.btn(href="#/item/#{item.id}")
+              | #{item.title}
 
-        td
-         a.btn.btn-danger(href="#/del/#{item.id}") X
+          td
+           a.btn.btn-danger(href="#/del/#{item.id}") X

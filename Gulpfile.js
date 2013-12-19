@@ -4,6 +4,7 @@ var jade = require("gulp-jade");
 var wrap = require("gulp-wrap-amd");
 var coffee = require("gulp-coffee");
 var reload = require("gulp-livereload");
+var stylus = require("gulp-stylus");
 require("coffee-script");
 
 server = lr();
@@ -19,10 +20,18 @@ gulp.task("templates", function(){
 	.pipe(reload(server));
 
 });
+
 gulp.task("jade", function(){
 	gulp.src("./client/index.jade")
 	.pipe(jade())
 	.pipe(gulp.dest("./public"))
+	.pipe(reload(server));
+});
+
+gulp.task('stylus', function(){
+	gulp.src("./client/css/**/*.styl")
+	.pipe(stylus())
+	.pipe(gulp.dest("./public/css"))
 	.pipe(reload(server));
 });
 
@@ -65,15 +74,18 @@ gulp.task("watch", function(){
 		gulp.watch("./client/index.jade", function(e){
 			gulp.run("jade");
 		});
-		gulp.watch("./client/css/**", function(e){
+		gulp.watch("./client/css/**/*.css", function(e){
 			gulp.run("copy");
+		});
+		gulp.watch("./client/css/**/*.styl", function(e){
+			gulp.run("stylus");
 		});
 	
 	});
 });
 
 gulp.task("default", function(){
-	gulp.run("templates", "scripts", "copy", "watch", "jade");
+	gulp.run("templates", "scripts", "copy", "watch", "jade", "stylus");
 	require("./start");
 	
 });

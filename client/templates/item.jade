@@ -1,7 +1,11 @@
-form.item-edit-form.input-group.col-md-8.center
-	input.form-control(type="text" name="title" value="#{item.title}")
-	textarea.form-control(name="content" rows="10")
-		| #{item.content}
-	input(type="hidden" name="id" value="#{item.id}")
-	button.btn.btn-primary(type="submit") Save
-	button.btn.btn-danger.delete(type="button") Delete
+.spacer-100
+.item-box.center.col-md-10.box-shadow-light
+  form.item-edit-form.input-group.col-md-12.center
+    input.form-control(type="text" name="title" value="#{item.title}")
+    textarea.form-control(name="content" rows="10")
+      | #{item.content}
+    input(type="hidden" name="id" value="#{item.id}")
+    .spacer-25
+    button.btn.btn-primary.margin-5(type="submit") Save
+    button.btn.btn-danger.delete.margin-5(type="button") Delete
+.spacer-100

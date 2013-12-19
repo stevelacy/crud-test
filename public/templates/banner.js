@@ -56,9 +56,6 @@ jade.debug.shift();
 jade.debug.shift();
 buf.push("</a>");
 jade.debug.shift();
-jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
-buf.push("<hr/>");
-jade.debug.shift();
 jade.debug.shift();;return buf.join("");
 } catch (err) {
   jade.rethrow(err, jade.debug[0].filename, jade.debug[0].lineno);

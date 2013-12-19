@@ -6,7 +6,7 @@ try {
 var buf = [];
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
-buf.push("<form class=\"item-edit-form input-group col-md-8 center\">");
+buf.push("<form class=\"item-edit-form input-group col-md-8 center content\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 2, filename: jade.debug[0].filename });
 buf.push("<input type=\"text\" name=\"title\" placeholder=\"Title\" class=\"form-control\"/>");

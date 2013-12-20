@@ -1,5 +1,5 @@
 (function() {
-  define(['views/Main', 'views/Item', 'views/Banner', 'views/New'], function(Main, Item, Banner, New) {
+  define(['views/Main', 'views/Item', 'views/Banner', 'views/New', 'views/collectionView'], function(Main, Item, Banner, New, CollectionView) {
     var AppRouter, appRouter, bannerView;
     AppRouter = Backbone.Router.extend({
       routes: {

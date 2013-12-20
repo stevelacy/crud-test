@@ -1,2 +1,2 @@
 $(document).ready ->
-    $("body textarea").autosize()
+    #$("body textarea").autosize()

@@ -1,6 +1,4 @@
 (function() {
-  $(document).ready(function() {
-    return $("body textarea").autosize();
-  });
+  $(document).ready(function() {});
 
 }).call(this);

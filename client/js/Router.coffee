@@ -1,5 +1,5 @@
 #define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
-define ['views/Main','views/Item', 'views/Banner', 'views/New'], (Main, Item, Banner, New) ->
+define ['views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView'], (Main, Item, Banner, New, CollectionView) ->
 
 	AppRouter = Backbone.Router.extend
 		routes:
@@ -41,7 +41,7 @@ define ['views/Main','views/Item', 'views/Banner', 'views/New'], (Main, Item, Ba
 	bannerView = new Banner
 	$("#banner").html bannerView.render().el
 
-
+	
 
 
 

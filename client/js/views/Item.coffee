@@ -4,15 +4,13 @@ define ["../models/Item", "templates/item"],(Item, templ) ->
 	class View extends Backbone.View
 			
 		render: ->
-			that = @
 			console.log @.id
-			@model = new Item id: @id
+			@model = new Item _id: @id
 			@model.fetch
-				success: (data) ->
-					#template = _.template($("#template-item").html(), {item:data} )
-					#that.$el.html template
-					that.$el.html templ item:data.toJSON()
+				success: (data) =>
+					@$el.html templ item:data.toJSON()
 					console.log data.toJSON()
+					console.log @model
 			return @
 		events:
 			"submit form": "saveData"

@@ -14,12 +14,11 @@
       }
 
       View.prototype.render = function() {
-        var that;
-        that = this;
+        var _this = this;
         items.fetch({
           success: function() {
             console.log(items.models);
-            return that.$el.html(templ({
+            return _this.$el.html(templ({
               items: items.toJSON()
             }));
           }

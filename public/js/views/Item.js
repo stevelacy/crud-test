@@ -13,18 +13,18 @@
       }
 
       View.prototype.render = function() {
-        var that;
-        that = this;
+        var _this = this;
         console.log(this.id);
         this.model = new Item({
-          id: this.id
+          _id: this.id
         });
         this.model.fetch({
           success: function(data) {
-            that.$el.html(templ({
+            _this.$el.html(templ({
               item: data.toJSON()
             }));
-            return console.log(data.toJSON());
+            console.log(data.toJSON());
+            return console.log(_this.model);
           }
         });
         return this;

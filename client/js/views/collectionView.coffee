@@ -1,4 +1,5 @@
 define ['collections/Items','views/Item'],(Items, Item)->
+  ###
   Employee = Backbone.Model.extend({})
   Employees = Backbone.Collection.extend(model: Employee)
   EmployeeView = Backbone.View.extend(
@@ -27,3 +28,4 @@ define ['collections/Items','views/Item'],(Items, Item)->
     emptyListCaptionCollectionView.collection.add
       firstName: "Super"
       lastName: "Sleuth"
+  ###

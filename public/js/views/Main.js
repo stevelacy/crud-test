@@ -3,8 +3,7 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(['collections/Items', 'templates/main', 'views/ItemView'], function(Items, templ, itemRow) {
-    var View, items, _ref;
-    items = new Items();
+    var View, _ref;
     return View = (function(_super) {
       __extends(View, _super);
 
@@ -21,10 +20,7 @@
 
       View.prototype.itemView = itemRow;
 
-      View.prototype.appendHtml = function(collectionView, itemView) {
-        collectionView.$(".item-list").append(itemView.el);
-        return console.log(collectionView);
-      };
+      View.prototype.collection = new Items;
 
       /*
       		render: ->

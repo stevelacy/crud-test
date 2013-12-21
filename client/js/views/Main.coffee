@@ -5,8 +5,9 @@ define ['collections/Items', 'templates/main','views/ItemView'],(Items, templ, i
 		itemViewContainer: ".item-list"
 		tagName: "div"
 		template: templ
-		itemView: itemRow
+		itemView: new itemRow
 		collection: new Items
+		console.log new itemRow
 		###
 		render: ->
 			items.fetch

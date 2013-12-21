@@ -18,9 +18,11 @@
 
       View.prototype.template = templ;
 
-      View.prototype.itemView = itemRow;
+      View.prototype.itemView = new itemRow;
 
       View.prototype.collection = new Items;
+
+      console.log(new itemRow);
 
       /*
       		render: ->

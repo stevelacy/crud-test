@@ -1,5 +1,5 @@
 #define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
-define ['views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView'], (Main, Item, Banner, New, CollectionView) ->
+define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView'], (Items, Main, Item, Banner, New, CollectionView) ->
 
 	AppRouter = Backbone.Router.extend
 		routes:

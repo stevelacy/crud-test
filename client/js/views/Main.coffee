@@ -1,14 +1,19 @@
-define ['collections/Items', 'templates/main'],(Items, templ) ->
+define ['collections/Items', 'templates/main','views/ItemView'],(Items, templ, itemRow) ->
 	items = new Items()
 
-	class View extends Backbone.View
-
+	class View extends Backbone.Marionette.CompositeView
+		itemViewContainer: ".item-list"
+		tagName: "div"
+		template: templ
+		itemView: itemRow
+		appendHtml: (collectionView, itemView) ->
+			collectionView.$(".item-list").append itemView.el
+			console.log collectionView
+		###
 		render: ->
 			items.fetch
 				success: () =>
 					console.log items.models
-					#template = _.template($("#template-main").html(), {items: items.models})
-					#that.$el.html template
 					@$el.html templ items:items.toJSON()
 			return @
 
@@ -17,6 +22,6 @@ define ['collections/Items', 'templates/main'],(Items, templ) ->
 
 		runTest: (e) ->
 			console.log $("#test").val()
-
+		###
 	
 

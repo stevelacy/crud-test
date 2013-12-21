@@ -1,7 +1,7 @@
 define ["models/Item","app/Router", "templates/new"],(Item, Router, templ) ->
 
 
-	class View extends Backbone.View
+	class View extends Backbone.Marionette.View
 				
 		render: ->
 			@model = new Item

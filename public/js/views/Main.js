@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['collections/Items', 'templates/main'], function(Items, templ) {
+  define(['collections/Items', 'templates/main', 'views/ItemView'], function(Items, templ, itemRow) {
     var View, items, _ref;
     items = new Items();
     return View = (function(_super) {
@@ -13,30 +13,38 @@
         return _ref;
       }
 
-      View.prototype.render = function() {
-        var _this = this;
-        items.fetch({
-          success: function() {
-            console.log(items.models);
-            return _this.$el.html(templ({
-              items: items.toJSON()
-            }));
-          }
-        });
-        return this;
+      View.prototype.itemViewContainer = ".item-list";
+
+      View.prototype.tagName = "div";
+
+      View.prototype.template = templ;
+
+      View.prototype.itemView = itemRow;
+
+      View.prototype.appendHtml = function(collectionView, itemView) {
+        collectionView.$(".item-list").append(itemView.el);
+        return console.log(collectionView);
       };
 
-      View.prototype.events = {
-        "click input[type=button]": "runTest"
-      };
+      /*
+      		render: ->
+      			items.fetch
+      				success: () =>
+      					console.log items.models
+      					@$el.html templ items:items.toJSON()
+      			return @
+      
+      		events:
+      			"click input[type=button]": "runTest"
+      
+      		runTest: (e) ->
+      			console.log $("#test").val()
+      */
 
-      View.prototype.runTest = function(e) {
-        return console.log($("#test").val());
-      };
 
       return View;
 
-    })(Backbone.View);
+    })(Backbone.Marionette.CompositeView);
   });
 
 }).call(this);

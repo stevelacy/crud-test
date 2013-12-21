@@ -1,7 +1,7 @@
 define ["../models/Item", "templates/item"],(Item, templ) ->
 
 
-	class View extends Backbone.View
+	class View extends Backbone.Marionette.View
 			
 		render: ->
 			console.log @.id

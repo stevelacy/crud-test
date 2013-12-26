@@ -30,7 +30,6 @@
     });
     appRouter.on('route:main', function() {
       var view;
-      console.log("The Main page");
       view = new Main({
         collection: new Items,
         model: new ItemModel

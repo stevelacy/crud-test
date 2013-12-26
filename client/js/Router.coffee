@@ -1,5 +1,5 @@
 #define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
-define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView', 'models/Item' ], (Items, Main, Item, Banner, New, CollectionView, ItemModel) ->
+define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView', 'models/Item'], (Items, Main, Item, Banner, New, CollectionView, ItemModel) ->
 
 	AppRouter = Backbone.Marionette.AppRouter.extend
 		routes:
@@ -26,7 +26,7 @@ define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/Ne
 		$("#content").html view.render().el
 
 	appRouter.on 'route:main', () ->
-		console.log "The Main page"
+
 		view = new Main
 			collection: new Items
 			model: new ItemModel

@@ -7,7 +7,6 @@ define ['collections/Items', 'templates/main','views/ItemView'],(Items, templ, i
 		template: templ
 		itemView: new itemRow
 		collection: new Items
-		console.log new itemRow
 		###
 		render: ->
 			items.fetch

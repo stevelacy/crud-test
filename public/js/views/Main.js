@@ -22,8 +22,6 @@
 
       View.prototype.collection = new Items;
 
-      console.log(new itemRow);
-
       /*
       		render: ->
       			items.fetch

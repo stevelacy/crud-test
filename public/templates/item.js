@@ -30,27 +30,59 @@ jade.debug.shift();
 buf.push("</textarea>");
 jade.debug.shift();
 jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
+// iterate item.todos
+;(function(){
+  var $$obj = item.todos;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var todo = $$obj[$index];
+
+jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+buf.push("todo");
+jade.debug.shift();
+jade.debug.shift();
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var todo = $$obj[$index];
+
+jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+buf.push("todo");
+jade.debug.shift();
+jade.debug.shift();
+    }
+
+  }
+}).call(this);
+
+jade.debug.shift();
+jade.debug.unshift({ lineno: 9, filename: jade.debug[0].filename });
 buf.push("<input" + (jade.attrs({ 'type':("hidden"), 'name':("id"), 'value':("" + (item.id) + "") }, {"type":true,"name":true,"value":true})) + "/>");
 jade.debug.shift();
-jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 10, filename: jade.debug[0].filename });
 buf.push("<div class=\"spacer-25\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.shift();
 buf.push("</div>");
 jade.debug.shift();
-jade.debug.unshift({ lineno: 9, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 11, filename: jade.debug[0].filename });
 buf.push("<button type=\"submit\" class=\"btn btn-primary margin-5\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
-jade.debug.unshift({ lineno: 9, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 11, filename: jade.debug[0].filename });
 buf.push("Save");
 jade.debug.shift();
 jade.debug.shift();
 buf.push("</button>");
 jade.debug.shift();
-jade.debug.unshift({ lineno: 10, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 12, filename: jade.debug[0].filename });
 buf.push("<button type=\"button\" class=\"btn btn-danger delete margin-5\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
-jade.debug.unshift({ lineno: 10, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 12, filename: jade.debug[0].filename });
 buf.push("Delete");
 jade.debug.shift();
 jade.debug.shift();
@@ -62,7 +94,7 @@ jade.debug.shift();
 jade.debug.shift();
 buf.push("</div>");
 jade.debug.shift();
-jade.debug.unshift({ lineno: 11, filename: jade.debug[0].filename });
+jade.debug.unshift({ lineno: 13, filename: jade.debug[0].filename });
 buf.push("<div class=\"spacer-100\">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.shift();

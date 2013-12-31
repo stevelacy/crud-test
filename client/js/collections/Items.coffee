@@ -1,5 +1,4 @@
-define ['models/Item'],(Item)->
+define ->
 	class Items extends Backbone.Collection
-    url: 'http://node.la/v1/items'
-    #model: Item
+		url: 'http://node.la/v1/items'
 	return Items

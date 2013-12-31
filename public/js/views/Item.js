@@ -16,15 +16,14 @@
         var _this = this;
         console.log(this.id);
         this.model = new Item({
-          _id: this.id
+          id: this.id
         });
         this.model.fetch({
           success: function(data) {
             _this.$el.html(templ({
               item: data.toJSON()
             }));
-            console.log(data.toJSON());
-            return console.log(_this.model);
+            return console.log(data.toJSON());
           }
         });
         return this;

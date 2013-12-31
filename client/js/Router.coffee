@@ -1,7 +1,7 @@
 #define ['views/Main', 'views/Note', 'views/Item', 'views/New'], (Main, Note, Item, New) ->
-define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView', 'models/Item'], (Items, Main, Item, Banner, New, CollectionView, ItemModel) ->
+define ['views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectionView'], (Main, Item, Banner, New, CollectionView) ->
 
-	AppRouter = Backbone.Marionette.AppRouter.extend
+	AppRouter = Backbone.Router.extend
 		routes:
 			"":"main"
 			"items/:id":"getItem"
@@ -17,22 +17,15 @@ define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/Ne
 		view = new Item(el: $("#content"))
 	###	
 
-	region = new Backbone.Marionette.Region
-		el: '#content'
-
 	appRouter.on 'route:item', (id) ->
 		console.log "Item route called -  number is #{id}"
 		view = new Item id:id
 		$("#content").html view.render().el
 
 	appRouter.on 'route:main', () ->
-
+		console.log "The Main page"
 		view = new Main
-			collection: new Items
-			model: new ItemModel
-
-		region.show(view)
-		#$("#content").html view.render().el
+		$("#content").html view.render().el
 
 	appRouter.on 'route:note', (id) ->
 		console.log "Note clicked"
@@ -48,6 +41,7 @@ define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/Ne
 	bannerView = new Banner
 	$("#banner").html bannerView.render().el
 
+	
 
 
 
@@ -57,5 +51,4 @@ define ['collections/Items','views/Main','views/Item', 'views/Banner', 'views/Ne
 
 
 
-
-	Backbone.history.start({pushState:false})
+	#Backbone.history.start({pushState:false})

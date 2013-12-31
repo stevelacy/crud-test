@@ -1,7 +1,7 @@
 (function() {
-  define(['collections/Items', 'views/Main', 'views/Item', 'views/Banner', 'views/New', 'views/collectionView', 'models/Item'], function(Items, Main, Item, Banner, New, CollectionView, ItemModel) {
-    var AppRouter, appRouter, bannerView, region;
-    AppRouter = Backbone.Marionette.AppRouter.extend({
+  define(['views/Main', 'views/Item', 'views/Banner', 'views/New', 'views/collectionView'], function(Main, Item, Banner, New, CollectionView) {
+    var AppRouter, appRouter, bannerView;
+    AppRouter = Backbone.Router.extend({
       routes: {
         "": "main",
         "items/:id": "getItem",
@@ -17,9 +17,6 @@
     		view = new Item(el: $("#content"))
     */
 
-    region = new Backbone.Marionette.Region({
-      el: '#content'
-    });
     appRouter.on('route:item', function(id) {
       var view;
       console.log("Item route called -  number is " + id);
@@ -30,11 +27,9 @@
     });
     appRouter.on('route:main', function() {
       var view;
-      view = new Main({
-        collection: new Items,
-        model: new ItemModel
-      });
-      return region.show(view);
+      console.log("The Main page");
+      view = new Main;
+      return $("#content").html(view.render().el);
     });
     appRouter.on('route:note', function(id) {
       var view;
@@ -51,10 +46,7 @@
       return $("#content").html(view.render().el);
     });
     bannerView = new Banner;
-    $("#banner").html(bannerView.render().el);
-    return Backbone.history.start({
-      pushState: false
-    });
+    return $("#banner").html(bannerView.render().el);
   });
 
 }).call(this);

@@ -1,5 +1,4 @@
 define ->
 	class Item extends Backbone.Model
-    urlRoot: 'http://node.la/v1/items'
-    idAttribute: "_id"
+		urlRoot: 'http://node.la/v1/items'
 	return Item

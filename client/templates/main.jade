@@ -3,11 +3,10 @@ a(href="#/new")
 hr
 .center
   .item-list.width-full-res
-  //-
     - each item in items
       a(href="#/item/#{item.id}")
         li.hover.trans.bg-white
           | #{item.title}
-          .delete.btn.btn-danger(data-id="#{item.id}") X
+          //.delete.btn.btn-danger(data-id="#{item.id}") X
       //.spacer-25
 .spacer-100

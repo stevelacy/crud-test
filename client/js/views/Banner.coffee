@@ -1,5 +1,5 @@
 define ['templates/banner'],(templ)->
-	class View extends Backbone.View
+	class View extends Backbone.Marionette.View
 
 		render: ->
 			#template = _.template($("#template-banner").html(), {} )

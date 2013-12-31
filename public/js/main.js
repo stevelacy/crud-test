@@ -1,5 +1,16 @@
 (function() {
   define(['app/Router'], function(Router) {
+    var Claru;
+    Claru = new Backbone.Marionette.Application;
+    Claru.addRegions({
+      banner: '#banner',
+      main: '#content',
+      footer: '#footer'
+    });
+    Claru.on('initialize:after', function() {
+      return Backbone.history.start();
+    });
+    return Claru.start();
     /*
     	test = new Item 
     		title: "test from backbone "

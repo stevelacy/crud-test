@@ -14,8 +14,6 @@
 
       Item.prototype.urlRoot = 'http://node.la/v1/items';
 
-      Item.prototype.idAttribute = "_id";
-
       return Item;
 
     })(Backbone.Model);

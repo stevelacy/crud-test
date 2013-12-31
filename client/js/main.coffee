@@ -1,4 +1,14 @@
 define ['app/Router'], (Router) ->
+
+	Claru = new Backbone.Marionette.Application
+
+	Claru.addRegions
+		banner: '#banner'
+		main: '#content'
+		footer: '#footer'
+	Claru.on 'initialize:after', ->
+		Backbone.history.start()
+	Claru.start()
 	###
 	test = new Item 
 		title: "test from backbone "

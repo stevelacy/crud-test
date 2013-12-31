@@ -4,6 +4,8 @@
     input.form-control.width-full.bold.large(type="text" name="title" value="#{item.title}")
     textarea.form-control.width-full(name="content" rows="10")
       | #{item.content}
+    - each todo in item.todos
+      | todo
     input(type="hidden" name="id" value="#{item.id}")
     .spacer-25
     button.btn.btn-primary.margin-5(type="submit") Save

@@ -5,12 +5,13 @@ define ["../models/Item", "templates/item"],(Item, templ) ->
 			
 		render: ->
 			console.log @.id
-			@model = new Item _id: @id
+			@model = new Item id: @id
 			@model.fetch
 				success: (data) =>
-					@$el.html templ item:data.toJSON()
+					#template = _.template($("#template-item").html(), {item:data} )
+					#that.$el.html template
+					this.$el.html templ item:data.toJSON()
 					console.log data.toJSON()
-					console.log @model
 			return @
 		events:
 			"submit form": "saveData"

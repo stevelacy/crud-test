@@ -1,7 +1,7 @@
 define(["vendor/jade"],function(jade){
 
 return function anonymous(locals) {
-jade.debug = [{ lineno: 1, filename: "/www/node/claru-marionette/client/templates/main.jade" }];
+jade.debug = [{ lineno: 1, filename: "/www/node/blarney-marionette/client/templates/main.jade" }];
 try {
 var buf = [];
 var locals_ = (locals || {}),items = locals_.items;jade.debug.unshift({ lineno: 1, filename: jade.debug[0].filename });
@@ -40,7 +40,7 @@ jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
 
 jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
-buf.push("<a" + (jade.attrs({ 'href':("#/item/" + (item.id) + "") }, {"href":true})) + ">");
+buf.push("<a" + (jade.attrs({ 'href':("item/" + (item.id) + "") }, {"href":true})) + ">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
 buf.push("<li class=\"hover trans bg-white\">");
@@ -70,7 +70,7 @@ jade.debug.shift();
 
 jade.debug.unshift({ lineno: 6, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 7, filename: jade.debug[0].filename });
-buf.push("<a" + (jade.attrs({ 'href':("#/item/" + (item.id) + "") }, {"href":true})) + ">");
+buf.push("<a" + (jade.attrs({ 'href':("item/" + (item.id) + "") }, {"href":true})) + ">");
 jade.debug.unshift({ lineno: undefined, filename: jade.debug[0].filename });
 jade.debug.unshift({ lineno: 8, filename: jade.debug[0].filename });
 buf.push("<li class=\"hover trans bg-white\">");

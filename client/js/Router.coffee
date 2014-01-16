@@ -42,13 +42,3 @@ define ['views/Main','views/Item', 'views/Banner', 'views/New', 'views/collectio
 	$("#banner").html bannerView.render().el
 
 	
-
-
-
-
-
-
-
-
-
-	#Backbone.history.start({pushState:false})

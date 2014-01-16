@@ -4,7 +4,7 @@ hr
 .center
   .item-list.width-full-res
     - each item in items
-      a(href="#/item/#{item.id}")
+      a(href="item/#{item.id}")
         li.hover.trans.bg-white
           | #{item.title}
           //.delete.btn.btn-danger(data-id="#{item.id}") X
